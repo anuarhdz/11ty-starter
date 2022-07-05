@@ -1,0 +1,45 @@
+{
+  "name": "eleventy-starter",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "defaults",
+  "scripts": {
+    "dev:parcel": "parcel watch",
+    "dev:11ty": "eleventy --serve --watch",
+    "start": "run-p dev:*",
+    "clean": "rimraf ./_site && rimraf ./.parcel-cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.6.2",
+    "postcss": "^8.4.14",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.1.4"
+  },
+  "targets": {
+    "css": {
+      "source": [
+        "./src/css/index.css"
+      ],
+      "distDir": "./_site/css"
+    },
+    "js": {
+      "source": [
+        "./src/js/index.js"
+      ],
+      "distDir": "./_site/js"
+    }
+  },
+  "dependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
+  }
+}

@@ -1,0 +1,15 @@
+---
+  layout: base.njk
+---
+
+<div class="full-height bg-blue-300 grid">
+ <div class="full-height-center">
+   <h1 class="text-4xl">It works 😎</h1>
+
+    {% set posts = collections.posts %}
+
+    {% for post in posts %}
+      <a href="{{ post.url }}" class="text-2xl">{{ post.data.title }}</a>
+    {% endfor %}
+ </div>
+</div>
