@@ -37,10 +37,8 @@ async function imageShortcode(src, alt, caption, sizes = "100vw") {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addPassthroughCopy('./src/images');
-  //eleventyConfig.addPassthroughCopy('./src/js');
-  //eleventyConfig.addPassthroughCopy('./src/css');
 
   let markdownLibrary = markdownIt({
     html: true,
