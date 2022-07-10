@@ -2,8 +2,16 @@
 layout: base.njk
 ---
 
-<article>
-  <h1>{{ title }}</h1>
+<div class="grid full-height bg-slate-100">
+  <div class="full-height-center">
+    <div class="p-5 md:p-10">
+      <article>
+        <h1 class="mb-5 text-3xl text-center">{{ title }}</h1>
 
-  {{ content | safe }}
-</article>
+        <div class="mx-auto prose">
+          {{ content | safe }}
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

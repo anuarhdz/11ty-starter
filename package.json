@@ -1,29 +1,53 @@
 {
   "name": "eleventy-starter",
   "version": "1.0.0",
-  "description": "",
   "browserslist": "defaults",
   "scripts": {
-    "dev:parcel": "parcel watch",
-    "dev:11ty": "eleventy --serve --watch",
-    "start": "run-p dev:*",
-    "clean": "rimraf ./_site && rimraf ./.parcel-cache"
+    "build": "cross-env NODE_ENV=production run-s clean build:parcel hash build:eleventy",
+    "build:eleventy": "eleventy",
+    "build:parcel": "parcel build --no-source-maps",
+    "clean": "rimraf ./_site && rimraf ./.parcel-cache",
+    "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+    "dev": "cross-env NODE_ENV=development run-s hash watch",
+    "hash": "node ./11ty/scripts/hash/index.js",
+    "lint": "eslint ./",
+    "start": "run-s clean dev",
+    "watch": "run-p watch:*",
+    "watch:bs": "browser-sync start --config .bsconfig.js",
+    "watch:eleventy": "eleventy --watch",
+    "watch:parcel": "parcel watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "parcel",
+    "eleventy",
+    "eleventy starter"
+  ],
+  "author": "Anuar Reyes <anuar@hey.com>",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-img": "^2.0.1",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.10",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.4",
+    "eleventy-plugin-gen-favicons": "^1.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.4",
+    "md5": "^2.3.0",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.6.2",
     "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^3.1.4"
+    "tailwindcss": "^3.1.4",
+    "terser": "^5.14.1"
   },
   "targets": {
     "css": {
@@ -38,8 +62,5 @@
       ],
       "distDir": "./_site/js"
     }
-  },
-  "dependencies": {
-    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
   }
 }

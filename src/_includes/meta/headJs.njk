@@ -1,0 +1,14 @@
+{# inline js #}
+{% if criticalJs %}
+  {% set js %}
+    {% for item in criticalJs | makeArray %}
+      {% include "critical-js/" + item + ".js" %}
+    {% endfor %}
+  {% endset %}
+  <script>{{ js | jsmin }}</script>
+{% endif %}
+
+{% if has.js | has('index') %}<script type="module" src="/js/index{{ hash.js.index }}.js"></script>{% endif %}
+{% if pageJs %}
+  {% for item in pageJs | makeArray %}<script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>{% endfor %}
+{% endif %}

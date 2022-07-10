@@ -13,6 +13,17 @@
 * Nunjunks templates
 * Eleventy
 
+## Template features
+
+### Set ogimage and path to critical-css asset
+
+```yaml 
+ogImage: 
+    src:
+    alt:
+  criticalCss:
+```
+
 
 ## Install
 

@@ -1,0 +1,9 @@
+{
+  "title": "Eleventy Starter",
+  "author": "Anuar Reyes",
+  "twitter": "",
+  "description": "A starter template for Eleventy",
+  "lang": "en",
+  "url": "localhost",
+  "favicon": "./src/images/favicon.svg"
+}

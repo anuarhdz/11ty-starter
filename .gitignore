@@ -1,3 +1,7 @@
-node_modules
-_site
-.parcel-cache
+node_modules/
+_site/
+.parcel-cache/
+.cache/
+src/_data/hash.json
+_testing/
+.DS_Store

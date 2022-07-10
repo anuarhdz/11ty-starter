@@ -1,13 +1,20 @@
+{% if not description %}{% set description = sitemeta.description | sanitizeHtmlAttr %}{% endif %}
+{% if (permalink == '/') or not title %}{% set docTitle = sitemeta.title %}{% else %}{% set docTitle = [title, sitemeta.title] | join(" | ") %}{% endif %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ sitemeta.lang }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/css/index.css">
-  <script type="module" src="/js/index.js" defer></script>
+  <meta name="description" content="{{ description }}">
+  {% if ogImage %}{% ogimage ogImage.src, ogImage.alt %}
+  {% elif sitemeta.ogImage %}{% ogimage sitemeta.ogImage.src, sitemeta.ogImage.alt %}
+  {% endif %}
+  <title>{{ docTitle }}</title>
+  {% include "meta/headCss.njk" %}
+  {% include "meta/headJs.njk" %}
+  {% if sitemeta | has('favicon') %}{% favicons sitemeta.favicon %}{% endif %}
 </head>
 
 <body>
