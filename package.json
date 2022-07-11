@@ -1,6 +1,6 @@
 {
   "name": "eleventy-starter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "browserslist": "defaults",
   "scripts": {
     "build": "cross-env NODE_ENV=production run-s clean build:parcel hash build:eleventy",
