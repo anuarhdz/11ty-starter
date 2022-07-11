@@ -1,18 +1,18 @@
-const dir = require('./11ty/constants/dir');
+const dir = require('./eleventy/constants/dir');
 
 const faviconPlugin = require('eleventy-plugin-gen-favicons');
-const htmlminTransform = require('./11ty/transforms/htmlmin');
-const imageShortcode = require('./11ty/shortcodes/image');
-const halfImages = require('./11ty/shortcodes/halfImages');
-const markdownShortcode = require('./11ty/shortcodes/markdown');
-const ogImageShortcode = require('./11ty/shortcodes/ogimage');
-const ogMetaShortcode = require('./11ty/shortcodes/ogmeta');
-const prettierTransform = require('./11ty/transforms/prettier');
-const sanitizeHtmlAttr = require('./11ty/helpers/sanitizeHtmlAttr');
-const toAbsoluteUrlFilter = require('./11ty/filters/toAbsoluteUrl');
-const objectHasFilter = require('./11ty/filters/object-has');
-const makeArrayFilter = require('./11ty/filters/makeArray');
-const jsminFilter = require('./11ty/filters/jsmin');
+const htmlminTransform = require('./eleventy/transforms/htmlmin');
+const imageShortcode = require('./eleventy/shortcodes/image');
+const halfImages = require('./eleventy/shortcodes/halfImages');
+const markdownShortcode = require('./eleventy/shortcodes/markdown');
+const ogImageShortcode = require('./eleventy/shortcodes/ogimage');
+const ogMetaShortcode = require('./eleventy/shortcodes/ogmeta');
+const prettierTransform = require('./eleventy/transforms/prettier');
+const sanitizeHtmlAttr = require('./eleventy/helpers/sanitizeHtmlAttr');
+const toAbsoluteUrlFilter = require('./eleventy/filters/toAbsoluteUrl');
+const objectHasFilter = require('./eleventy/filters/object-has');
+const makeArrayFilter = require('./eleventy/filters/makeArray');
+const jsminFilter = require('./eleventy/filters/jsmin');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
