@@ -15,7 +15,7 @@ const makeArrayFilter = require('./eleventy/filters/makeArray');
 const jsminFilter = require('./eleventy/filters/jsmin');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget('./11ty');
+  eleventyConfig.addWatchTarget('./eleventy');
 
   // filters
   eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
